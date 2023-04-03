@@ -1,2 +1,2 @@
 # CS306-Database_Systems
-Database Managment system created for Olymmpics.
+Database Managment system created for Olympics.
