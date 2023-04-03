@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.athletes {
+  float: left;
+  overflow: hidden;
+}
+
+.athletes .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .athletes:hover .dropbtn {
+  background-color: red;
+}
+
+.athletes-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.athletes-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.athletes-content a:hover {
+  background-color: #ddd;
+}
+
+.athletes:hover .athletes-content {
+  display: block;
+}
+
+
+
+.audience {
+  float: left;
+  overflow: hidden;
+}
+
+.audience .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .audience:hover .dropbtn {
+  background-color: red;
+}
+
+.audience-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.audience-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.audience-content a:hover {
+  background-color: #ddd;
+}
+
+.audience:hover .audience-content {
+  display: block;
+}
+
+
+
+
+.channel {
+  float: left;
+  overflow: hidden;
+}
+
+.channel .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .channel:hover .dropbtn {
+  background-color: red;
+}
+
+.channel-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.channel-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.channel-content a:hover {
+  background-color: #ddd;
+}
+
+.channel:hover .channel-content {
+  display: block;
+}
+
+
+
+.coaches {
+  float: left;
+  overflow: hidden;
+}
+
+.coaches .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .coaches:hover .dropbtn {
+  background-color: red;
+}
+
+.coaches-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.coaches-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.coaches-content a:hover {
+  background-color: #ddd;
+}
+
+.coaches:hover .coaches-content {
+  display: block;
+}
+
+
+
+.competitions {
+  float: left;
+  overflow: hidden;
+}
+
+.competitions .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .competitions:hover .dropbtn {
+  background-color: red;
+}
+
+.competitions-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.competitions-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.competitions-content a:hover {
+  background-color: #ddd;
+}
+
+.competitions:hover .competitions-content {
+  display: block;
+}
+
+
+
+.country{
+  float: left;
+  overflow: hidden;
+}
+
+.country .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .country:hover .dropbtn {
+  background-color: red;
+}
+
+.country-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.country-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.country-content a:hover {
+  background-color: #ddd;
+}
+
+.country:hover .country-content {
+  display: block;
+}
+
+
+.jury{
+  float: left;
+  overflow: hidden;
+}
+
+.jury .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .jury:hover .dropbtn {
+  background-color: red;
+}
+
+.jury-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.jury-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.jury-content a:hover {
+  background-color: #ddd;
+}
+
+.jury:hover .jury-content {
+  display: block;
+}
+
+
+
+.manager{
+  float: left;
+  overflow: hidden;
+}
+
+.manager .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .manager:hover .dropbtn {
+  background-color: red;
+}
+
+.manager-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.manager-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.manager-content a:hover {
+  background-color: #ddd;
+}
+
+.manager:hover .manager-content {
+  display: block;
+}
+
+
+.medic{
+  float: left;
+  overflow: hidden;
+}
+
+.medic .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .medic:hover .dropbtn {
+  background-color: red;
+}
+
+.medic-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.medic-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.medic-content a:hover {
+  background-color: #ddd;
+}
+
+.medic:hover .medic-content {
+  display: block;
+}
+
+
+.technician{
+  float: left;
+  overflow: hidden;
+}
+
+.technician .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .technician:hover .dropbtn {
+  background-color: red;
+}
+
+.technician-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.technician-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.technician-content a:hover {
+  background-color: #ddd;
+}
+
+.technician:hover .technician-content {
+  display: block;
+}
+
+
+
+.transporters{
+  float: left;
+  overflow: hidden;
+}
+
+.transporters .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .transporters:hover .dropbtn {
+  background-color: red;
+}
+
+.transporters-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.transporters-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.transporters-content a:hover {
+  background-color: #ddd;
+}
+
+.transporters:hover .transporters-content {
+  display: block;
+}
+
+
+
+.venue{
+  float: left;
+  overflow: hidden;
+}
+
+.venue .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .venue:hover .dropbtn {
+  background-color: red;
+}
+
+.venue-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.venue-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.venue-content a:hover {
+  background-color: #ddd;
+}
+
+.venue:hover .venue-content {
+  display: block;
+}
+
+.support {
+  float: left;
+  overflow: hidden;
+}
+
+.support .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .support:hover .dropbtn {
+  background-color: red;
+}
+
+.support-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.support-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.support-content a:hover {
+  background-color: #ddd;
+}
+
+.support:hover .support-content {
+  display: block;
+}
+
+
+
+
+</style>
+</head>
+
+
+
+
+<body>
+
+<div class="navbar">
+    <a href="http://localhost/Pages/Profile/athleteProfileForm.php">Athlete Profile</a>
+
+
+    <div class="athletes">
+      <button class="dropbtn">Athletes
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="athletes-content">
+        <a href="http://localhost/Pages/Athletes/insertAthleteForm.php">Athlete Insertion</a>
+        <a href="http://localhost/Pages/Athletes/athleteDeletion.php">Athlete Deletion</a>
+        <a href="http://localhost/Pages/Athletes/athleteSelectionForm.php">Athlete Selection</a>
+      </div>
+    </div>
+    
+
+    <div class="audience">
+      <button class="dropbtn">Audience
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="audience-content">
+        <a href="http://localhost/Pages/Audience/audienceInsertionForm.php">Audience Insertion</a>
+        <a href="http://localhost/Pages/Audience/audienceDeletion.php">Audience Deletion</a>
+        <a href="http://localhost/Pages/Audience/audienceSelectionForm.php">Audience Selection</a>
+        <a href="http://localhost/Pages/Audience/attendInsertionForm.php">Attend Insertion</a>
+        <a href="http://localhost/Pages/Audience/attendDeletionForm.php">Attend Deletion</a>
+        <a href="http://localhost/Pages/Audience/attendSelectionForm.php">Attend Selection</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="channel">
+      <button class="dropbtn">Channels
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="channel-content">
+        <a href="http://localhost/Pages/Channel/insertChannelForm.php">Channel Insertion</a>
+        <a href="http://localhost/Pages/Channel/deleteChannel.php">Channel Deletion</a>
+        <a href="http://localhost/Pages/Channel/channelSelectionForm.php">Channel Selection</a>
+        <a href="http://localhost/Pages/Channel/insertBroadcastForm.php">Brodcast Insertion</a>
+        <a href="http://localhost/Pages/Channel/broadcastDeletionForm.php">Brodcast Deletion</a>
+        <a href="http://localhost/Pages/Channel/broadcastSelectionForm.php">Brodcast Selection</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="coaches">
+      <button class="dropbtn">Coaches
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="coaches-content">
+        <a href="http://localhost/Pages/Coaches/insertCoachForm.php">Coach Insertion</a>
+        <a href="http://localhost/Pages/Coaches/coachDeletion.php">Coach Deletion</a>
+        <a href="http://localhost/Pages/Coaches/coachSelectionForm.php">Coach Selection</a>
+        <a href="http://localhost/Pages/Coaches/insertTrainsForm.php">Train Insertion</a>
+        <a href="http://localhost/Pages/Coaches/trainsDeletionForm.php">Train Deletion</a>
+        <a href="http://localhost/Pages/Coaches/trainsSelectionForm.php">Train Selection</a>
+      </div>
+    </div>
+
+
+
+    <div class="competitions">
+      <button class="dropbtn">Competitions
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="competitions-content">
+        <a href="http://localhost/Pages/Competitions/insertCompetitionForm.php">Competition Insertion</a>
+        <a href="http://localhost/Pages/Competitions/competitionDeletion.php">Competition Deletion</a>
+        <a href="http://localhost/Pages/Competitions/competitionSelectionForm.php">Competition Selection</a>
+        <a href="http://localhost/Pages/Competitions/insertCompetesInForm.php">CompetesIn Insertion</a>
+        <a href="http://localhost/Pages/Competitions/competesInDeletionForm.php">CompetesIn  Deletion</a>
+        <a href="http://localhost/Pages/Competitions/competesInSelectionForm.php">CompetesIn Selection</a>
+      </div>
+    </div>
+
+    <div class="country">
+      <button class="dropbtn">Countries
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="country-content">
+        <a href="http://localhost/Pages/Country/countriesInsertionForm.php">Country Insertion</a>
+        <a href="http://localhost/Pages/Country/countriesDeletion.php">Country Deletion</a>
+        <a href="http://localhost/Pages/Country/countriesSelectionForm.php">Country Selection</a>
+      </div>
+    </div>
+
+
+    <div class="jury">
+      <button class="dropbtn">Jury
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="jury-content">
+        <a href="http://localhost/Pages/Jury/insertjuryform.php">Jury Insertion</a>
+        <a href="http://localhost/Pages/Jury/deletejury.php">Jury Deletion</a>
+        <a href="http://localhost/Pages/Jury/juryselectionform.php">Jury Selection</a>
+        <a href="http://localhost/Pages/Jury/insertEvaluatesForm.php">Evaluate Insertion</a>
+        <a href="http://localhost/Pages/Jury/evaluateDeletionForm.php">Evaluate Deletion</a>
+        <a href="http://localhost/Pages/Jury/evaluateSelectionForm.php">Evaluate Selection</a>
+      </div>
+    </div>
+
+
+
+    <div class="manager">
+      <button class="dropbtn">Manager
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="manager-content">
+        <a href="http://localhost/Pages/Manager/insertManagerForm.php">Manager Insertion</a>
+        <a href="http://localhost/Pages/Manager/managerDeletion.php">Manager Deletion</a>
+        <a href="http://localhost/Pages/Manager/managerSelectionForm.php">Manager Selection</a>
+      </div>
+    </div>
+
+
+    <div class="medic">
+      <button class="dropbtn">Medic
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="medic-content">
+        <a href="http://localhost/Pages/Medic/insertmedicform.php">Medic Insertion</a>
+        <a href="http://localhost/Pages/Medic/deletemedic.php">Medic Deletion</a>
+        <a href="http://localhost/Pages/Medic/medicselectionform.php">Medic Selection</a>
+        <a href="http://localhost/Pages/Medic/insertresponsibleform.php">Responsible Insertion</a>
+        <a href="http://localhost/Pages/Medic/responsibleDeletionForm.php">Responsible Deletion</a>
+        <a href="http://localhost/Pages/Medic/responsibleSelectionForm.php">Responsible Selection</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="technician">
+      <button class="dropbtn">Technician
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="technician-content">
+        <a href="http://localhost/Pages/Technician/insertTechnicianForm.php">Technician Insertion</a>
+        <a href="http://localhost/Pages/Technician/technicianDeletion.php">Technician Deletion</a>
+        <a href="http://localhost/Pages/Technician/technicianSelectionForm.php">Technician Selection</a>
+      </div>
+    </div>
+
+    <div class="transporters">
+      <button class="dropbtn">Transporters
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="transporters-content">
+        <a href="http://localhost/Pages/Transporters/insertTransporterForm.php">Transporters Insertion</a>
+        <a href="http://localhost/Pages/Transporters/transporterDeletion.php">Transporters Deletion</a>
+        <a href="http://localhost/Pages/Transporters/selectTransporterForm.php">Transporters Selection</a>
+        <a href="http://localhost/Pages/Transporters/insertTransport_AthletesForm.php">Transport Athlete Insertion</a>
+        <a href="http://localhost/Pages/Transporters/transport_athletes_deletionform.php">Transport Athlete Deletion</a>
+        <a href="http://localhost/Pages/Transporters/select_transport_athletesform.php">Transport Athlete Selection</a>
+      </div>
+    </div>
+
+
+    <div class="venue">
+      <button class="dropbtn">Venue
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="venue-content">
+        <a href="http://localhost/Pages/Venue/venueInsertionForm.php">Venue Insertion</a>
+        <a href="http://localhost/Pages/Venue/venueDeletion.php">Venue Deletion</a>
+        <a href="http://localhost/Pages/Venue/venueSelectionForm.php">Venue Selection</a>
+      </div>
+    </div>
+
+    <div class="support">
+      <button class="dropbtn">Support Page
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="support-content">
+        <a href="http://localhost/admin_chat.php">Admin Support</a>
+        <a href="http://localhost/client_chat.php">Client Support</a>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</body>
+</html>
